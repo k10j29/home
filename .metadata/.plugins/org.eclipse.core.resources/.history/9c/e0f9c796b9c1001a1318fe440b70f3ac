@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/httpRequest.js"></script>
+
+<script type="text/javascript">
+  
+  function send(f){
+	  
+	//입력여부 체크(주민번호 정규식 이용)
+	var jumin_no = $("jumin_no").val();
+	
+	//1.체크
+	
+	int [] check_su = {2,3,4,5,6,7,0,8,9,2,3,4,5};
+	for(int i=0;i<=12;i++) {
+		sum = sum + (jumin_no.charAt(i) - '0') * check_su[i];
+	}
+	
+	//체크수
+	int check_num = (11-(sum%11))%10;
+	
+	System.out.println(check_num);
+	
+	//마지막 수
+	int last_num  = jumin_no.charAt(13) - '0';
+	
+	return (last_num == check_num);
+}
+	
+	
+	//맞으면 전송
+	f.action = "jumin.do"; //JuminAction
+	f.method = "GET";
+	f.submit();//전송
+	  
+  }
+
+</script>
+
+</head>
+<body>
+
+	<form>
+		주민번호:<input name="jumin_no" value="801212-1234560"> <input
+			type="button" value="확인" onclick="send(this.form);">
+	</form>
+
+</body>
+</html>

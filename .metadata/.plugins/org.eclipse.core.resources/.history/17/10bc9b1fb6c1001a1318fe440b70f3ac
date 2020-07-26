@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Ajax기능을 사용하려면... -->
+<script type="text/javascript" src="js/httpRequest.js"></script>
+
+<script type="text/javascript">
+	
+	function  send_jumin () {
+
+		//입력여부 체크(주민번호 정규식 이용)
+		var jumin_no = f.jumin_no.value.trim();
+
+		//맞으면 전송
+		 var url   = "jumin.do";
+		  var param = "location.href = 'Jumin.do'";
+		f.submit();//전송
+
+	}
+	
+	//성별정보 구한다
+	char gender = jumin_no.charAt(7);
+	
+	if(gender=='1' || gender=='2' || gender=='5' || gender=='6')
+		year = year + 1900;
+	else
+		year = year + 2000;
+	
+	return year;
+}
+	
+	  //Ajax로 전송
+	  sendRequest(url,param,resultFn,"GET");	  
+	  
+}
+	
+	
+	
+	
+</script>
+
+
+</head>
+<body>
+
+	주민번호 :
+	<input id="jumin_id" value="920129-1177522">
+	<input type="button" value="결과알려줘" onclick="send_jumin;">
+
+
+	<hr>
+	<div id="disp">문제풀기</div>
+
+</body>
+</html>

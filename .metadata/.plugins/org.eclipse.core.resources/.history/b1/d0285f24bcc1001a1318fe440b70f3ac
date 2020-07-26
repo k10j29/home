@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Ajax기능을 사용하려면... -->
+<script type="text/javascript" src="js/httpRequest.js">
+	var regular_num = /^[0-9]{1,5}$/;
+
+	function send_jumin() {
+
+		var su1 = $("#su1").val();//document.getElementById("su1").value;
+		var su2 = $("#su2").val();//document.getElementById("su2").value;
+
+		if (regular_num.test(su1) == false) {
+			alert("1~5자리 숫자만 입력하세요");
+			$("#su1").val("");//document.getElementById("su1").value='';
+			$("#su1").focus();//document.getElementById("su1").focus();
+			return;
+		}
+
+		if (regular_num.test(su2) == false) {
+			alert("1~5자리 숫자만 입력하세요");
+			$("#su2").val("");//document.getElementById("su2").value='';
+			$("#su2").focus();//document.getElementById("su2").focus();
+			return;
+		}
+
+		//jQuery를 이용한 Ajax통신		  
+		$.ajax({
+			url : 'calc.do',
+			data : {
+				"su1" : su1,
+				"su2" : su2
+			},
+			success : function(res_data) {
+
+				$("#disp").html(res_data);
+
+			}
+		});
+
+	}
+</script>
+
+
+<script type="text/javascript">
+	
+</script>
+
+
+</head>
+<body>
+
+	주민번호 :
+	<input id="jumin_id">
+	<input type="button" value="결과" onclick="send_jumin;">
+
+
+	<hr>
+	<div id="disp">짠</div>
+
+</body>
+</html>

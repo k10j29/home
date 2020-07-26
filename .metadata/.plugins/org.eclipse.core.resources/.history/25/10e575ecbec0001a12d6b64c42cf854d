@@ -1,0 +1,12 @@
+package vo;
+
+public class VisitVo {
+
+	int IDX;
+	String NAME;
+	String CONTENT;
+	String PWD;
+	String IP;
+	String REGDATE;
+
+}

@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%
+	//Scriptlet : 코드영역 _jspService (request.response)
+//{
+//JspWriter 		out;
+//ServletContext  application;
+//HttpSession 	session;
+//PageContext 	pageContext;
+//}
+
+
+//위에 숨겨져있는 JSP 객체를 : JSP 내장객체라고 한다
+//
+%>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

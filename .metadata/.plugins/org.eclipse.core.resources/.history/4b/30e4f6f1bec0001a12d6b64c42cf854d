@@ -1,0 +1,16 @@
+package vo;
+
+public class VisitVo {
+
+	
+	/*
+	 * DB 컬럼명 과 Vo 의 속성명 그리고 입력 Form 의 patemeter 명 일치시키기
+	 */
+	int idx;
+	String name;
+	String content;
+	String pwd;
+	String ip;
+	String regdate;
+
+}

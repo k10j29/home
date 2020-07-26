@@ -1,0 +1,5 @@
+127.0.0.1 - - [13/Jul/2020:23:14:58 +0900] "GET / HTTP/1.1" 404 807
+127.0.0.1 - - [13/Jul/2020:23:15:00 +0900] "GET /2020_0713_MemberTest/member/list.do HTTP/1.1" 200 2576
+127.0.0.1 - - [13/Jul/2020:23:15:01 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+127.0.0.1 - - [13/Jul/2020:23:15:05 +0900] "GET /2020_0713_MemberTest/member/insert_form.do HTTP/1.1" 200 4928
+127.0.0.1 - - [13/Jul/2020:23:15:08 +0900] "GET /2020_0713_MemberTest/member/modify_form.do?m_idx=1 HTTP/1.1" 200 4991

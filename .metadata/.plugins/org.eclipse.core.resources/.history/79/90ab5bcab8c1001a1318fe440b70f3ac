@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Ajax기능을 사용하려면... -->
+<script type="text/javascript" src="js/httpRequest.js"></script>
+
+<script type="text/javascript">
+
+
+	function send_jumin() {
+
+		var jumin_no = f.jumin_no.value.trim();
+		
+		  
+	  }
+
+		var url = "jumin.do";
+
+		//Ajax로 전송
+		sendRequest(url, "GET");
+
+	}
+
+	//Ajax 요청에 대한 결과 수신 함수
+	function resultFn() {
+
+		console.log("readyState=" + xhr.readyState + "  status=" + xhr.status);
+		if (xhr.readyState == 4 && xhr.status == 200) {
+
+			var data = xhr.responseText;
+			//alert(data);
+
+			//수신결과를 <div id="disp"></div>에 넣는다
+			document.getElementById("disp").innerHTML = data;
+
+		}
+
+	}
+</script>
+
+
+</head>
+<body>
+
+	주민번호 :
+	<input id="jumin_id" value ="921029-1177522">
+	<input type="button" value="결과" onclick="send_jumin();">
+
+
+	<hr>
+	<div id="disp">문제풀기</div>
+
+</body>
+</html>

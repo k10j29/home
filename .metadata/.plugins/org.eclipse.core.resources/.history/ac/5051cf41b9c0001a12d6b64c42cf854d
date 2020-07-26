@@ -1,0 +1,22 @@
+
+--일련번호 관리객체
+
+
+
+시퀀스 시작
+create sequence seq_visit_idx
+
+방명록 테이블 만들기
+create table visit
+(
+idx int,  				-- 일련번호
+name varchar2(100), 	-- 작성자
+content varchar2(2000), -- 내용
+pwd varchar2(100),		-- 비밀번호
+
+
+
+
+
+)
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Ajax기능을 사용하려면... -->
+<script type="text/javascript" src="js/httpRequest.js"></script>
+
+<script type="text/javascript">
+	
+	function  send_jumin () {
+
+		//입력여부 체크(주민번호 정규식 이용)
+		var jumin_no = f.jumin_no.value.trim();
+
+		//맞으면 전송
+		 var url   = "jumin.do";
+		  var param = "location.href = 'Jumin.do'";
+		f.submit();//전송
+
+	}
+	
+ int getYear() {
+		
+		String strYear 	= jumin_no.substring(0,0+2);
+		int    year 	= Integer.parseInt(strYear);
+		//성별정보 구한다
+		char gender = jumin_no.charAt(7);
+		
+		if(gender=='1' || gender=='2' || gender=='5' || gender=='6')
+			year = year + 1900;
+		else
+			year = year + 2000;
+		
+		return year;
+	}
+ public String getTti() {
+		
+		switch(this.getYear()%12)
+		{
+		  case  0: return "원숭이";
+		  case  1: return "닭";
+		  case  2: return "개";
+		  case  3: return "돼지";
+		  case  4: return "쥐";
+		  case  5: return "소";
+		  case  6: return "호랑이";
+		  case  7: return "토끼";
+		  case  8: return "용";
+		  case  9: return "뱀";
+		  case 10: return "말";
+		  case 11: return "양";
+		}
+		
+		return "";
+	}
+	
+ public String getGender() {
+		char gender = jumin_no.charAt(7);
+		
+		if(gender=='1' || gender=='3' || gender=='5' || gender=='7')
+		   return "남자";
+		
+		return "여자";
+	}
+ int getAge() {
+	//현재 시스템 날짜 구하기
+	Calendar c = Calendar.getInstance();
+	//현재 년도
+	int current_year = c.get(Calendar.YEAR);
+	
+	int age = current_year - this.getYear() + 1;
+	
+	return age;
+}
+	
+	
+	
+	  //Ajax로 전송
+	  sendRequest(url,param,resultFn,"GET");	  
+	  
+}
+	
+	
+	
+	
+</script>
+
+
+</head>
+<body>
+
+	주민번호 :
+	<input id="jumin_id" value="920129-1177522">
+	<input type="button" value="결과알려줘" onclick="send_jumin;">
+
+
+	<hr>
+	<div id="disp">문제풀기</div>
+
+</body>
+</html>

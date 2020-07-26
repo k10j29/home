@@ -1,0 +1,19 @@
+package dao;
+
+public class DeptDao {
+
+	// single-ton : 객체 1개만생성해서 사용(서비스)하자
+	static DeptDao single = null;
+
+	public static DeptDao getInstance() {
+
+		if (single == null)
+			single = new DeptDao();
+		return single;
+	}
+
+	public DeptDao() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,83 @@
+package action;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.DeptDao;
+import myutil.Jumin;
+import vo.DeptVo;
+
+/**
+ * Servlet implementation class DeptListaction
+ */
+@WebServlet("/dept_list.do")
+public class DeptListaction extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void service(HttpServletRequest request, // 요청처리객체
+			HttpServletResponse response) // 응답처리객체
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+		request.setCharacterEncoding("utf-8");
+
+		// 부서목록//
+
+//		String deptno = request.getParameter("deptno");
+//		String dname = request.getParameter("dname");
+//		String loc = request.getParameter("loc");
+
+		DeptDao dao = new DeptDao();
+
+		List<DeptVo> list = DeptDao.getInstance().selectList();
+
+		for(DeptVo deptvo : list) {
+		    out.println(DeptVo.get());
+		    out.println(DeptVo.get());
+		    out.println(DeptVo.getMainCategoryId());
+		}
+		
+		// 응답처리//
+
+		response.setContentType("text/html; charset=utf-8;");
+
+		StringBuffer html = new StringBuffer();
+		html.append("<html>");
+		html.append("<head><title></title></head>");
+		html.append("<body>");
+		html.append("<table border='1'>");
+
+		// 1번째 줄
+		html.append("<th>deptno</th>");
+		html.append("<th>dname</th>");
+		html.append("<th>loc</th>");
+		
+		
+		for(int i = 0; i < list.size(); i++) {
+
+		// 1번째 줄
+		html.append("<th>dname</th>");
+		html.append(dname);
+		html.append("<td></td>");
+		// 1번째 줄
+		html.append("<th>loc</th>");
+		html.append(loc);
+		html.append("<td></td>");
+
+		PrintWriter out = response.getWriter();
+		out.print(html.toString());
+
+	}
+
+}

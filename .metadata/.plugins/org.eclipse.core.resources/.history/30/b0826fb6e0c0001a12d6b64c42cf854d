@@ -1,0 +1,49 @@
+package action;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.SungTBDao;
+import vo.SungVo;
+
+/**
+ * Servlet implementation class SungInsertAction
+ */
+@WebServlet("/sung/insert.do")
+public class SungInsertAction extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// 1. 수신 인코딩 설정
+		// sung_insert_form.jsp (보내는쪽) 하고 맞춰주기
+		request.setCharacterEncoding("UTF-8");
+
+		// 2. 파라미터 받기
+		String name = request.getParameter("name");
+		String content = request.getParameter("content");
+		String pwd = request.getParameter("pwd");
+		String id = request.getParameter("id");
+
+		// 3. 포장하기
+		SungVo vo = new SungVo(name, kor, eng, mat);
+
+		// 4. DB insert
+		int res = SungTBDao.getInstance().insert(vo);
+
+		// 5. 목록 보기이동
+		response.sendRedirect("list.do");
+
+	}
+
+}

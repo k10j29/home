@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%
+	//Scriptlet : 코드영역 
+// _jspService(request,response)
+//{
+//     JspWriter      out;
+//     ServletContext application;
+//     HttpSession    session;
+//     PageContext    pageContext;
+//}
+
+// t/Test_Parameter_result.jsp?su1=111&su2=222
+%>
+
+String su1 = request.getParameter("su1"); String su2 =
+request.getParameter("su2");
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

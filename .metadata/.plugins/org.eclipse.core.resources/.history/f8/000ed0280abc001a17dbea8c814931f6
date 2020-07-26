@@ -1,0 +1,21 @@
+<%@page import="dao.DeptDao"%>
+<%@page import="vo.DeptVo"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%
+	//Java Code를 작성 할수있는 Area
+List<DeptVo> list = DeptDao.getInstance().selectList();
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

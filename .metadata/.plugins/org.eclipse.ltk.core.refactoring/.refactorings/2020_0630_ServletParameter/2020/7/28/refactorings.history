@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;myutil&apos; to &apos;2020_0709_AjaxTest/src&apos;&#x0D;&#x0A;- Original project: &apos;2020_0630_ServletParameter&apos;&#x0D;&#x0A;- Destination element: &apos;2020_0709_AjaxTest/src&apos;&#x0D;&#x0A;- Original element: &apos;2020_0630_ServletParameter/src/myutil&apos;" description="Copy package" destination="=2020_0709_AjaxTest/src" element1="/src&lt;myutil" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1594278152219" version="1.0"/>
+</session>

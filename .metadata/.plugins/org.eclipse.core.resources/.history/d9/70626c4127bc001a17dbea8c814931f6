@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form>
+
+		수1 : <input name="su1"> <br> 수2 : <input name="su2">
+		<br> <input type="button" value="+ - * / %">
+	</form>
+
+</body>
+</html>

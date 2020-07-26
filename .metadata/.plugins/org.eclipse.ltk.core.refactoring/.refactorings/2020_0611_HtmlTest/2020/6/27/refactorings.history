@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;05_form_tags.html&apos; to &apos;WebContent&apos;&#x0D;&#x0A;- Original project: &apos;2020_0611_HtmlTest&apos;&#x0D;&#x0A;- Destination element: &apos;WebContent&apos;&#x0D;&#x0A;- Original element: &apos;05_form_tags.html&apos;" description="Copy file" element1="WebContent/05_form_tags.html" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1593484970523" target="/2020_0630_ServletParameter/WebContent" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,24 @@
+package dao;
+
+/*DAO ( Data Access Object) 
+C reate 관리 (insert 명령)
+R ead 관리 (Select 명령)
+U pdate (Update)
+D elete (Delete)*/
+public class DeptDao {
+
+	// single-ton : 객체 1개만생성해서 사용(서비스)하자
+	static DeptDao single = null;
+
+	public static DeptDao getInstance() {
+
+		if (single == null)
+			single = new DeptDao();
+		return single;
+	}
+
+	public DeptDao() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

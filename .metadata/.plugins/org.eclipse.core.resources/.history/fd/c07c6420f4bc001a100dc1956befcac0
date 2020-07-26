@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%
+    /*
+       JSTL(JSP Standard Tag Library)
+       :tag형식의 명령처리 언어
+       1.Core Library : if , choose , forEach ...
+       2.Fmt  Library : 날짜/숫자 출력형식
+       3.Fn   Library : substring, indexOf, replace,..
+       
+       4.JSTL을 사용하려면(설정)
+       		taglibs-standard-impl-1.2.5.jar
+       		taglibs-standard-spec-1.2.5.jar
+       	 
+       	 C:\apache-tomcat-8.5.56\webapps\examples\WEB-INF\lib
+       	 에 있는 2개화일을
+       	 C:\apache-tomcat-8.5.56\lib 에 복사해놓는다		
+    
+    
+    */
+    
+    
+%>    
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+</body>
+</html>

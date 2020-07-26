@@ -1,0 +1,43 @@
+// 수정
+	public int update(SungVo vo) {
+		// TODO Auto-generated method stub
+		int res = 0;
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = // 1 2 3 4 5
+				"update sungtb set name=?,kor=?,eng=?,mat=? where no=?";
+
+		try {
+			// 1.Connection 얻기
+			conn = DBService.getInstance().getConnection();
+			// 2.PreparedStatement 얻기
+			pstmt = conn.prepareStatement(sql);
+			// 3.pstmt parameter 설정
+			pstmt.setString(1, vo.getName());
+			pstmt.setInt(2, vo.getKor());
+			pstmt.setInt(3, vo.getEng());
+			pstmt.setInt(4, vo.getMat());
+			pstmt.setInt(5, vo.getNo());
+
+			// 4.DB 처리: insert/update/delete
+			res = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return res;
+	}

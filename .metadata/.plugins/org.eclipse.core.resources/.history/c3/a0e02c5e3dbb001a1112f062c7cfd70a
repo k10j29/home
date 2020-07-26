@@ -1,0 +1,19 @@
+package service;
+
+public class DBService {
+
+//single-ton : 객체 1개만생성해서 사용(서비스)하자
+	static DBService single = null;
+
+	public static DBService getInstance() {
+
+		if (single == null)
+			single = new DBService();
+		return single;
+	}
+
+	public DBService() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
